@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #FAF5EA;
+    --background: #faf5ea;
     --foreground: #586643;
   }
 }
@@ -24,7 +24,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-poppins);
 }
-
 
 .button {
   position: relative;
@@ -37,10 +36,101 @@ body {
   inset: 0;
   padding: 1px;
   border-radius: 45px;
-  background: linear-gradient(257.64deg, #FFFFFF 35.6%, rgba(153,153,153,0) 48.33%);
-  -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
+  background: linear-gradient(
+    257.64deg,
+    #ffffff 35.6%,
+    rgba(153, 153, 153, 0) 48.33%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.inner-shadow {
+  box-shadow: inset 0px -4px 8.2px rgba(0, 0, 0, 0.685),
+    inset 0px 4px 8.2px rgba(0, 0, 0, 0.685);
+}
+
+.caroussel {
+  display: flex;
+  align-items: center;
+  height: 170px;
+  gap: 12px;
+  width: 100%;
+}
+
+.carousel-left,
+.carousel-right {
+  flex: 1; /* se estira */
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ffffff1f;
+  background: #02020214;
+  backdrop-filter: blur(48px);
+  border-radius: 36px;
+  overflow: hidden;
+}
+
+.carousel-left > div,
+.carousel-right > div {
+  display: flex;
+  gap: 12px;
+
+  /* 👇 ESTA ES LA MAGIA */
+  min-width: max-content;
+  height: 145px;
+}
+
+.carousel-left {
+  justify-content: flex-end;
+}
+.carousel-right {
+  justify-content: flex-start;
+}
+
+.carousel-left > div > div,
+.carousel-right > div > div {
+  flex: 1 1 0px;
+  min-width: 260px; /* tamaño de card */
+  max-width: 260px; /* límite para que no explote en pantallas grandes */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 24px;
+  background: #586643;
+  border: 1px solid #ffffff1f;
+  color: white;
+}
+
+.carousel-left > div > div > p,
+.carousel-right > div > div > p {
+  width: 200px;
+} 
+
+.caroussel-selected {
+  width: 340px;
+  height: 166px;
+  background: #ffffff14;
+  backdrop-filter: blur(48px);
+  border: 1px solid #e7e7e7;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

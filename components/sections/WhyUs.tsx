@@ -1,8 +1,18 @@
-import React from "react";
 import Image from "next/image";
 import SectionHelper from "../ui/SectionHelper";
+import InnerBar from "../ui/InnerBar";
 
 const WhyUs = () => {
+  const items = [
+    "Script verified",
+    "100% online",
+    "Confidential",
+    "No video calls",
+    "Online questionnaire",
+    "50K+ patients",
+    "Lowest cost",
+    "LegitScript verified",
+  ];
   return (
     <>
       {" "}
@@ -17,53 +27,23 @@ const WhyUs = () => {
         />
 
         <div className="bg-[#21251A] mx-auto w-full items-center flex flex-col justify-between  h-[484px] p-10 rounded-[64px] shadow-[0px_-4px_10.2px_0px_#00000040] gap-y-0 relative overflow-hidden z-10">
-          <div
-            className="
-            relative
-            w-[1032px]
-            h-[52px]
-            
-            rounded-[36px]
-            bg-black/20
-          
-            
-            
-            border border-white/10
-            backdrop-blur-xl
-            overflow-hidden
+           <InnerBar inner className="w-[1032px]   h-[52px]">
+            <div className="animate-marquee whitespace-nowrap font-sans font-light opacity-85 inline-block">
+                {/* Items originales */}
+                {items.map((item, i) => (
+                  <span key={i} className="mx-8 text-white">
+                    {item}
+                  </span>
+                ))}
 
-            
-            "
-          >
-            <div
-              className="  relative
-   
-            w-full h-full
-            rounded-[36px]
-            bg-black/20
-          
-            px-6 py-3 gap-6
-            
-           
-            backdrop-blur-2xl
-            overflow-hidden
-
-            before:content-['']
-            before:absolute before:inset-y-0 before:left-0
-            before:w-10                    /* ancho del óvalo */
-            before:rounded-[10px]
-            before:bg-[radial-gradient(circle_at_left,rgba(0,0,0,0.45),rgba(0,0,0,5))]
-            before:blur-[10px]
-
-
-            after:content-['']
-            after:absolute after:inset-y-0 after:right-0
-            after:w-10                   /* ancho del óvalo */
-            after:rounded-[10px]
-            after:bg-[radial-gradient(circle_at_left,black,black)]
-            after:blur-[10px]"
-            ></div>
-          </div>
+                {/* Clonados para animación infinita */}
+                {items.map((item, i) => (
+                  <span key={`clone-${i}`} className="mx-8 text-white">
+                    {item}
+                  </span>
+                ))}
+            </div>
+           </InnerBar>
 
           <p className="font-sans text-[25px] font-light leading-9  text-white text-center">
             “Aurea.Cure gave me clarity I never found in clinics, supplements,
@@ -89,7 +69,7 @@ const WhyUs = () => {
               </li>
             </ul>
           </div>
-          <div className="w-[400px] h-[400px] rounded-full blur-[270px] left-1/2 transform -translate-x-1/2 top-0 absolute bg-white/70"></div>
+          <div className="w-[400px] h-[400px] rounded-full blur-[270px] left-1/2 transform -translate-x-1/2 top-30 absolute bg-white/70"></div>
         </div>
       </SectionHelper>
     </>
