@@ -1,75 +1,93 @@
 import Image from "next/image";
-import CtaButton from "@/components/ui/CtaButton";
-import { ChevronUp } from "lucide-react";
+import HeroSection from "@/components/sections/HeroSection";
+import WhyUs from "@/components/sections/WhyUs";
+import SectionHelper from "@/components/ui/SectionHelper";
+import HeaderSections from "@/components/ui/HeaderSections";
+import Card from "@/components/ui/Card";
 
 const Homepage = () => {
+  const treatments = [
+    {
+      id: 1,
+      title: "Weight loss",
+      subtitle: "Personalized Care: GLP-1 Tablets",
+      price: 299,
+      oldPrice: 346,
+      image: "treatment-1.png", 
+      featured: true, 
+    },
+    {
+      id: 2,
+      title: "Weight loss",
+      subtitle: "Personalized Care: GLP-1 Tablets",
+      price: 299,
+      oldPrice: 346,
+      image: "treatment-2.png",
+      featured: false,
+    },
+    {
+      id: 3,
+      title: "Weight loss",
+      subtitle: "Personalized Care: GLP-1 Tablets",
+      price: 299,
+      oldPrice: 346,
+      image: "treatment-3.png",
+      featured: false,
+    },
+    {
+      id: 4,
+      title: "Weight loss",
+      subtitle: "Personalized Care: GLP-1 Tablets",
+      price: 299,
+      oldPrice: 346,
+      image: "treatment-4.png",
+      featured: false,
+    },
+  ];
+
   return (
     <>
       {/* {HERO SECTIONS} */}
-      <section className='bg-[url("/images/Hero.png")] h-[616px] flex-col flex items-center justify-center bg-no-repeat max-w-7xl relative mx-auto'>
-        <div className="w-160 h-160 rounded-full blur-[250px] left-1/2 transform -translate-x-1/2 -top-50 absolute bg-radial from-white via-white/30 to-transparent"></div>
-
-        <div className="w-full flex absolute top-10 max-w-[1192px] mx-auto px-10 items-center justify-between">
-          <div className="bg-background px-5 py-2 rounded-full shadow-lg">
-            <p className="font-mono font-bold text-2xl  ">Aurea.C</p>
-          </div>
-          <CtaButton route={"/"} name="See if you're eligiable" />
-        </div>
-
-        <h1 className="text-4xl md:text-6xl text-center font-mono font-bold text-white">
-          {`{Weightloss, skincare...}`}
-        </h1>
-        <p className="mt-4 text-4xl md:text-6xl text-center text-[#A6A7A3] font-mono font-bold">
-          Designed Around Your Body.
-        </p>
-
-        <ul className="mt-8 flex items-center gap-6 text-sm font-sans font-light text-white opacity-90">
-          <li className="flex items-center gap-2">
-            <Image
-              width={23}
-              height={23}
-              src={"/images/icons/users.svg"}
-              alt="Users icon"
-            />{" "}
-            150,000+ people supported
-          </li>
-
-          <li className="flex items-center gap-2">
-            <Image
-              width={23}
-              height={23}
-              src={"/images/icons/check.svg"}
-              alt="Check icon"
-            />{" "}
-            Trusted clinical care
-          </li>
-
-          <li className="flex items-center gap-2">
-            <Image
-              width={23}
-              height={23}
-              src={"/images/icons/usd.svg"}
-              alt="Dollar icon"
-            />{" "}
-            Clear, upfront pricing
-          </li>
-        </ul>
-
-        <nav className="bg-black/38 backdrop-blur-xl py-4.5 px-2   rounded-full border-2 border-white/20 absolute -bottom-4.5 shadow-lg left-1/2 transform -translate-x-1/2">
-          <ul className="flex items-center gap-x-8 z-0 text-white justify-between text-sm font-light font-sans">
-            <li className="pl-6">Home</li>
-            <li>About Us</li>
-            <li className="flex items-center gap-x-1">
-              Products <ChevronUp size={18} color="white" />{" "}
-            </li>
-            <li className="pr-6">Contact Us</li>
-          </ul>
-        </nav>
-      </section>
+      <HeroSection />
 
       {/* {About Us} */}
+      <WhyUs />
 
       {/* {Products} */}
+
+      <SectionHelper className="">
+        <HeaderSections
+          title={"Our leading products leverage GLP-1"}
+          text={
+            "Our GLP-1 therapies pair proven medication with clinician guidance to support steady appetite control, improved metabolic markers, and sustainable results."
+          }
+        />
+
+        <div>
+          <div>{/* Item selected */}</div>
+          <div className="flex flex-wrap gap-4 max-w-[620px]">
+            {/* Items you can select */}
+
+            {treatments &&
+              treatments.map((t) => (
+                <Card
+                  key={t.id} 
+
+                  className={`max-w-[260px] flex flex-col gap-y-3 ${t.id !== 1 ? "bg-[#D4B66E]! text-white border-[#D4B66E]/20" : ""}`}
+                >
+                  <span className="font-light">{t.title}</span>
+                  <p className="font-mono font-semibold text-2xl">
+                    {t.subtitle}
+                  </p>
+
+                  <div className="font-mono text-2xl">
+                    <span className="font-semibold ">${t.price} </span> | <span className="text-lg"> ${t.oldPrice}</span>
+                  </div>
+                </Card>
+              ))}
+          </div>
+        </div>
+      </SectionHelper>
 
       {/* {Steps} */}
 
