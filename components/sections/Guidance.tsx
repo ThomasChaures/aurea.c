@@ -49,15 +49,39 @@ const Guidance = () => {
         />
 
         <div>
-          <ul className="flex items-center justify-center text-white gap-x-6">
+          <ul
+            className="
+    grid 
+    grid-cols-1 
+    sm:grid-cols-2 
+    md:grid-cols-2 
+    lg:grid-cols-3 
+    xl:grid-cols-5 
+    gap-6
+    place-items-center
+    text-white
+  "
+          >
             {benefits &&
               benefits.map((b) => (
                 <li
                   key={b.id}
-                  className="rounded-3xl z-2 bg-white/15 w-full h-[330px] border border-[#FFFFFF1F] shadow-xl shadow-black/30 backdrop-blur-[48px] overflow-hidden flex flex-col"
+                  className="
+            rounded-3xl
+            bg-white/15
+            w-full 
+            max-w-[250px]
+            h-[330px]
+            border border-[#FFFFFF1F]
+            shadow-xl shadow-black/30 
+            backdrop-blur-[48px] 
+            overflow-hidden 
+            flex flex-col
+           
+          "
                 >
                   {/* Imagen */}
-                  <div className="relative w-auto h-full">
+                  <div className="relative w-full h-[50%]">
                     <Image
                       src={`/images/${b.image}`}
                       alt={b.title}
@@ -67,12 +91,12 @@ const Guidance = () => {
                   </div>
 
                   {/* Contenido */}
-                  <div className="p-3 flex flex-col h-full items-start justify-between w-full">
-                    <p className="text-base text-left leading-snug text-white mb-6">
+                  <div className="p-3 flex flex-col h-[50%] justify-between">
+                    <p className="text-base text-left leading-snug text-white">
                       {b.title}
                     </p>
 
-                    <Button className="mt-auto flex  items-center justify-between w-full">
+                    <Button className="flex items-center justify-between w-full">
                       <span>{b.category}</span>
                       <ChevronRight color="white" />
                     </Button>
