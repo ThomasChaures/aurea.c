@@ -9,12 +9,12 @@ const HeroSection = () => {
       <SectionHelper className='bg-[url("/images/Hero.png")] h-[616px] flex-col flex items-center justify-center bg-no-repeat'>
         <div className="w-160 h-160 rounded-full blur-[250px] left-1/2 transform -translate-x-1/2 -top-50 absolute bg-radial from-white via-white/30 to-transparent"></div>
 
-        <div className="w-full flex absolute top-10 max-w-[1192px] mx-auto px-10 items-center justify-between">
+        <header className="w-full flex absolute top-10 max-w-[1192px] mx-auto px-10 items-center justify-between">
           <div className="bg-background px-5 py-2 rounded-full shadow-lg">
             <p className="font-mono font-bold text-2xl  ">Aurea.C</p>
           </div>
           <CtaButton route={"/"} name="See if you're eligiable" />
-        </div>
+        </header>
 
         <h1 className="text-4xl md:text-6xl text-center font-mono font-bold text-white">
           {`{Weightloss, skincare...}`}

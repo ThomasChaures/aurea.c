@@ -64,6 +64,44 @@ body {
     inset 0px 4px 8.2px rgba(0, 0, 0, 0.685);
 }
 
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.35s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.35s ease-out forwards;
+}
+
+.animate-in-left {
+  animation: slideRight 0.35s ease-out reverse forwards;
+}
+
+.animate-in-right {
+  animation: slideLeft 0.35s ease-out reverse forwards;
+}
+
 .caroussel {
   display: flex;
   align-items: center;
@@ -82,6 +120,7 @@ body {
   background: #02020214;
   backdrop-filter: blur(48px);
   border-radius: 36px;
+  position: relative;
   overflow: hidden;
 }
 
@@ -119,8 +158,8 @@ body {
 
 .carousel-left > div > div > p,
 .carousel-right > div > div > p {
-  width: 200px;
-} 
+  width: 180px;
+}
 
 .caroussel-selected {
   width: 340px;

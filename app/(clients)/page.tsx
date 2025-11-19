@@ -1,23 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import HeroSection from "@/components/sections/HeroSection";
 import WhyUs from "@/components/sections/WhyUs";
 import LeadProducts from "@/components/sections/LeadProducts";
 import Steps from "@/components/sections/Steps";
+import Guidance from "@/components/sections/Guidance";
 import SliderProducts from "@/components/sections/SliderProducts";
-import SectionHelper from "@/components/ui/SectionHelper";
-import HeaderSections from "@/components/ui/HeaderSections";
-import Card from "@/components/ui/Card";
-import StackedCards from "@/components/organism/StackerdCard";
+import Reviews from "@/components/sections/Reviews";
+import Faqs from "@/components/sections/Faqs";
 
-import Button from "@/components/ui/Button";
-import { useState } from "react";
-import { CircleCheck, Section } from "lucide-react";
-import Pill from "@/components/ui/Pill";
-import InnerBar from "@/components/ui/InnerBar";
 
 const Homepage = () => {
+  
   return (
     <>
       {/* {HERO SECTIONS} */}
@@ -34,12 +28,22 @@ const Homepage = () => {
       <Steps />
 
       {/* {Guidance} */}
-      <SectionHelper></SectionHelper>
+
+      <Guidance />
+
       {/* {Reviews} */}
+
+      <Reviews />
 
       {/* {Q&A} */}
 
+      <Faqs />
+
       {/* {Footer} */}
+
+      <footer className="bg-[#21251A] max-w-7xl mx-auto w-full h-100 rounded-t-[50px]">
+        
+      </footer>
     </>
   );
 };
