@@ -39,7 +39,7 @@ const Steps = () => {
         z-10 flex justify-between pointer-events-none
       ">
         {/* IMG LEFT */}
-        <div className="relative h-[600px] w-[400px]">
+        <div className="relative max-lg:hidden h-[600px] w-[400px]">
           <Image
             src="/images/c-2.png"
             alt="Product image"
@@ -49,7 +49,7 @@ const Steps = () => {
         </div>
 
         {/* IMG RIGHT (levemente abajo) */}
-        <div className="relative h-[600px] w-[380px] translate-y-10">
+        <div className="relative max-lg:hidden h-[600px] w-[380px] translate-y-10">
           <Image
             src="/images/c-1.png"
             alt="Product image"

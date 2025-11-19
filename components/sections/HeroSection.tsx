@@ -6,7 +6,10 @@ import { ChevronUp } from "lucide-react";
 const HeroSection = () => {
   return (
     <>
-      <SectionHelper className='bg-[url("/images/Hero.png")] h-[616px] flex-col flex items-center justify-center bg-no-repeat'>
+      <SectionHelper
+        className='bg-[url("/images/Hero.png")] bg-position-[center_top]
+  h-[616px] flex-col flex items-center justify-center bg-no-repeat'
+      >
         <div className="w-160 h-160 rounded-full blur-[250px] left-1/2 transform -translate-x-1/2 -top-50 absolute bg-radial from-white via-white/30 to-transparent"></div>
 
         <header className="w-full flex absolute top-10 max-w-[1192px] mx-auto px-10 items-center justify-between">
@@ -19,9 +22,9 @@ const HeroSection = () => {
         <h1 className="text-4xl md:text-6xl text-center font-mono font-bold text-white">
           {`{Weightloss, skincare...}`}
         </h1>
-        <p className="mt-4 text-4xl md:text-6xl text-center text-[#A6A7A3] font-mono font-bold">
+        <h2 className="mt-4 text-4xl md:text-6xl text-center text-[#A6A7A3] font-mono font-bold">
           Designed Around Your Body.
-        </p>
+        </h2>
 
         <ul className="mt-8 flex items-center gap-6 text-sm font-sans font-light text-white opacity-90">
           <li className="flex items-center gap-2">

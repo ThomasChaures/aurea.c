@@ -1,4 +1,4 @@
-import React from "react";
+'use client'
 import Image from "next/image";
 import SectionHelper from "@/components/ui/SectionHelper";
 import HeaderSections from "@/components/ui/HeaderSections";
@@ -111,7 +111,7 @@ const LeadProducts = () => {
         }
       />
 
-      <div className="flex  items-center gap-x-10">
+      <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-10 items-center max-[700px]:justify-items-normal justify-items-center">
         <div
           onMouseEnter={() => {
             setOnItem(true);
@@ -119,19 +119,18 @@ const LeadProducts = () => {
           onMouseLeave={() => {
             setOnItem(false);
           }}
-          className="max-w-[530] transition-all  h-[540px] w-full"
+          className="max-w-[540] max-lg:max-w-full max-[1290px]:max-w-[500px] transition-all max-lg:h-[600px] h-[540px] w-full"
         >
           {/* Image preview */}
           {!onItem ? (
             <>
               {" "}
-              <div className="bg-transparent relative shadow-lg rounded-4xl ">
+              <div className="bg-transparent max-w-[540] max-lg:max-w-full   h-full relative shadow-lg rounded-4xl ">
                 <Image
                   src={`/images/${itemSelected.image}`}
                   alt={`${itemSelected.title} Image`}
-                  width={540}
-                  height={540}
-                  className="rounded-xl"
+                  fill
+                  className="rounded-xl object-cover"
                 />
 
                 <Button className="absolute bottom-7 right-7 text-sm">
@@ -142,10 +141,10 @@ const LeadProducts = () => {
           ) : (
             <>
               {/* Item details */}
-              <Card className="h-full">
+              <Card className="h-full max-w-[540px] max-lg:max-w-full flex flex-col items-start justify-between   w-full">
                 <Pill>{itemSelected.title}</Pill>
                 <div className="border-b py-6 border-foreground/20">
-                  <p className="text-4xl font-mono font-bold">
+                  <p className="text-4xl max-lg:text-2xl font-mono font-bold">
                     {itemSelected.subtitle}
                   </p>
                   <p className="text-lg pt-3">{itemSelected.description}</p>
@@ -161,58 +160,55 @@ const LeadProducts = () => {
                     ))}
                 </ul>
 
-                <div className="font-mono my-6 text-2xl">
-                  <span
-                    className="
+                <div>
+                  <div className="font-mono my-6 text-2xl">
+                    <span
+                      className="
                         text-[#D4B66E]
                        font-semibold"
-                  >
-                    ${itemSelected.price}{" "}
-                  </span>{" "}
-                  |{" "}
-                  <span className="text-lg line-through">
-                    {" "}
-                    ${itemSelected.oldPrice}
-                  </span>
-                </div>
+                    >
+                      ${itemSelected.price}{" "}
+                    </span>{" "}
+                    |{" "}
+                    <span className="text-lg line-through">
+                      {" "}
+                      ${itemSelected.oldPrice}
+                    </span>
+                  </div>
 
-                <div className="flex items-center gap-x-3">
-                  <Button>Get started</Button>
+                  <div className="flex items-center gap-x-3">
+                    <Button>Get started</Button>
 
-                  <Button variant="underline">Learn more</Button>
+                    <Button variant="underline">Learn more</Button>
+                  </div>
                 </div>
               </Card>
             </>
           )}
         </div>
-        <div className="flex flex-wrap gap-4 max-w-[540px]">
-          {/* Items you can select */}
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-4 max-lg:max-w-full max-w-[540px]">
+          {treatments.map((t) => (
+            <Card
+              key={t.id}
+              className={`flex flex-col gap-y-3 ${
+                t.id !== 1 ? "bg-[#D4B66E]! text-white border-[#D4B66E]/20" : ""
+              }`}
+            >
+              <span className="font-light">{t.title}</span>
+              <p className="font-mono font-bold text-2xl">{t.subtitle}</p>
 
-          {treatments &&
-            treatments.map((t) => (
-              <Card
-                key={t.id}
-                className={`max-w-[260px] flex flex-col gap-y-3 ${
-                  t.id !== 1
-                    ? "bg-[#D4B66E]! text-white border-[#D4B66E]/20"
-                    : ""
-                }`}
-              >
-                <span className="font-light">{t.title}</span>
-                <p className="font-mono font-bold text-2xl">{t.subtitle}</p>
-
-                <div className="font-mono text-2xl">
-                  <span
-                    className={`${
-                      t.id === 1 ? "text-[#D4B66E]" : ""
-                    } font-semibold`}
-                  >
-                    ${t.price}{" "}
-                  </span>{" "}
-                  | <span className="text-lg line-through"> ${t.oldPrice}</span>
-                </div>
-              </Card>
-            ))}
+              <div className="font-mono text-2xl">
+                <span
+                  className={`${
+                    t.id === 1 ? "text-[#D4B66E]" : ""
+                  } font-semibold`}
+                >
+                  ${t.price}
+                </span>{" "}
+                | <span className="text-lg line-through">${t.oldPrice}</span>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </SectionHelper>

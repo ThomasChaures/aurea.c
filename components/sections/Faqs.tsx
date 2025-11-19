@@ -1,4 +1,4 @@
-import React from "react";
+'use client'
 
 import Image from "next/image";
 import { useState } from "react";
@@ -53,9 +53,9 @@ const Faqs = () => {
   ];
 
   return (
-    <SectionHelper className="flex justify-between items-start gap-x-10">
+    <SectionHelper className="flex max-lg:flex-col max-lg:items-center max-lg:justify-center justify-between items-start gap-x-10">
       {/* Imagen */}
-      <div className="relative w-[624px] h-[624px]">
+      <div className="relative max-lg:hidden w-[624px] h-[624px]">
         <Image
           src="/images/qa.png"
           alt="Products image"
@@ -65,7 +65,7 @@ const Faqs = () => {
       </div>
 
       {/* FAQs */}
-      <div className="flex flex-col gap-y-3 w-[480px]">
+      <div className="flex flex-col gap-y-3 max-lg:w-full max-w-full w-[480px]">
         {faqs.map((q) => {
           const isOpen = openId === q.id;
 

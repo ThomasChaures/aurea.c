@@ -1,3 +1,5 @@
+'use client'
+
 import SectionHelper from "../ui/SectionHelper";
 import InnerBar from "../ui/InnerBar";
 import Image from "next/image";
@@ -178,7 +180,7 @@ const SliderProducts = () => {
             <div className="absolute inset-y-0 left-0 w-18 bg-linear-to-r  h-[200px] from-[#21251A] from-20% to-transparent z-20">
               <div
                 onClick={() => setSelectedIndex(mod(selectedIndex - 1))}
-                className="bg-gray-200/20 h-20 w-20 transform -translate-x-15 translate-y-10  flex items-center justify-center rounded-full border  border-white"
+                className="bg-gray-200/20 h-20 cursor-pointer w-20 transform -translate-x-15 translate-y-10  flex items-center justify-center rounded-full border  border-white"
               >
                 <ChevronLeft color="white" size={36} />
               </div>
@@ -188,7 +190,7 @@ const SliderProducts = () => {
             <div className="absolute inset-y-0 right-0 w-18 bg-linear-to-l h-[200px]  from-[#21251A] from-20%  to-transparent z-20">
               <div
                 onClick={() => setSelectedIndex(mod(selectedIndex + 1))}
-                className="bg-gray-200/20 h-20 w-20 flex items-center transform translate-y-10 translate-x-15 justify-center rounded-full border border-white"
+                className="bg-gray-200/20 cursor-pointer h-20 w-20 flex items-center transform translate-y-10 translate-x-15 justify-center rounded-full border border-white"
               >
                 <ChevronRight color="white" size={36} />
               </div>
