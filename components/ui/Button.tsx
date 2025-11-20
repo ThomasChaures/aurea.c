@@ -23,7 +23,7 @@ const Button = ({
   let styles = `
     px-6 py-3 rounded-[45px]
     flex items-center justify-center
-    font-medium
+
     gap-[6px]
     cursor-pointer
   `;

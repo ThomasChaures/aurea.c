@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import SectionHelper from "../ui/SectionHelper";
-import Card from "../ui/Card";
+import SectionHelper from "../../ui/SectionHelper";
+import Card from "../../ui/Card";
 import { ChevronDown } from "lucide-react";
 
 const Faqs = () => {
@@ -61,6 +61,7 @@ const Faqs = () => {
           alt="Products image"
           fill
           className="object-contain"
+          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 30vw"
         />
       </div>
 

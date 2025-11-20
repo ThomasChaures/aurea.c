@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import SectionHelper from "@/components/ui/SectionHelper";
 import HeaderSections from "@/components/ui/HeaderSections";
@@ -111,7 +111,7 @@ const LeadProducts = () => {
         }
       />
 
-      <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-10 items-center max-[700px]:justify-items-normal justify-items-center">
+      <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-10 items-center max-[770px]:justify-items-normal justify-items-center">
         <div
           onMouseEnter={() => {
             setOnItem(true);
@@ -119,7 +119,7 @@ const LeadProducts = () => {
           onMouseLeave={() => {
             setOnItem(false);
           }}
-          className="max-w-[540] max-lg:max-w-full max-[1290px]:max-w-[500px] transition-all max-lg:h-[600px] h-[540px] w-full"
+          className="max-w-[540] max-lg:max-w-full max-[1290px]:max-w-[500px] transition-all max-lg:h-[600px] h-[600px] w-full"
         >
           {/* Image preview */}
           {!onItem ? (
@@ -130,6 +130,7 @@ const LeadProducts = () => {
                   src={`/images/${itemSelected.image}`}
                   alt={`${itemSelected.title} Image`}
                   fill
+                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 30vw"
                   className="rounded-xl object-cover"
                 />
 

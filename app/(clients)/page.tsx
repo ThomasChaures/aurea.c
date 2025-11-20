@@ -1,13 +1,13 @@
 "use client";
 
-import HeroSection from "@/components/sections/HeroSection";
-import WhyUs from "@/components/sections/WhyUs";
-import LeadProducts from "@/components/sections/LeadProducts";
-import Steps from "@/components/sections/Steps";
-import Guidance from "@/components/sections/Guidance";
-import SliderProducts from "@/components/sections/SliderProducts";
-import Reviews from "@/components/sections/Reviews";
-import Faqs from "@/components/sections/Faqs";
+import HeroSection from "@/components/sections/homepage/HeroSection";
+import WhyUs from "@/components/sections/homepage/WhyUs";
+import LeadProducts from "@/components/sections/homepage/LeadProducts";
+import Steps from "@/components/sections/homepage/Steps";
+import Guidance from "@/components/sections/homepage/Guidance";
+import SliderProducts from "@/components/sections/homepage/SliderProducts";
+import Reviews from "@/components/sections/homepage/Reviews";
+import Faqs from "@/components/sections/homepage/Faqs";
 
 
 const Homepage = () => {
@@ -39,11 +39,6 @@ const Homepage = () => {
 
       <Faqs />
 
-      {/* {Footer} */}
-
-      <footer className="bg-[#21251A] max-w-7xl mx-auto w-full h-100 rounded-t-[50px]">
-        
-      </footer>
     </>
   );
 };

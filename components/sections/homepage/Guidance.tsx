@@ -1,9 +1,9 @@
 import React from "react";
-import SectionHelper from "../ui/SectionHelper";
-import HeaderSections from "../ui/HeaderSections";
+import SectionHelper from "../../ui/SectionHelper";
+import HeaderSections from "../../ui/HeaderSections";
 import Image from "next/image";
-import Button from "../ui/Button";
-import CtaButton from "../ui/CtaButton";
+import Button from "../../ui/Button";
+import CtaButton from "../../ui/CtaButton";
 import { ChevronRight } from "lucide-react";
 
 const Guidance = () => {
@@ -81,12 +81,14 @@ const Guidance = () => {
           "
                 >
                   {/* Imagen */}
-                  <div className="relative w-full h-[50%]">
+                  <div className="relative w-full h-[170px]">
                     <Image
+                      fill
                       src={`/images/${b.image}`}
                       alt={b.title}
-                      fill
                       className="object-cover"
+                      sizes="250px"
+                      priority
                     />
                   </div>
 

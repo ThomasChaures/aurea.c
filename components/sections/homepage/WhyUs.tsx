@@ -1,6 +1,6 @@
 import Image from "next/image";
-import SectionHelper from "../ui/SectionHelper";
-import InnerBar from "../ui/InnerBar";
+import SectionHelper from "../../ui/SectionHelper";
+import InnerBar from "../../ui/InnerBar";
 
 const WhyUs = () => {
   const items = [

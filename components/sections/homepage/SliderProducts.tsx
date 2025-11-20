@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import SectionHelper from "../ui/SectionHelper";
-import InnerBar from "../ui/InnerBar";
+import SectionHelper from "../../ui/SectionHelper";
+import InnerBar from "../../ui/InnerBar";
 import Image from "next/image";
-import Card from "../ui/Card";
-import Button from "../ui/Button";
+import Card from "../../ui/Card";
+import Button from "../../ui/Button";
 import { ChevronRight, CircleCheck, ChevronLeft } from "lucide-react";
 import { useState } from "react";
 const SliderProducts = () => {
@@ -98,78 +98,89 @@ const SliderProducts = () => {
     <>
       <SectionHelper className="bg-[#21251A] w-full! max-w-full">
         <div className="max-w-7xl flex items-center flex-col mx-auto py-20">
-          <InnerBar className2="px-2 py-2" className="mb-6">
-            <ul className="flex items-center">
-              <li className="w-43 text-center py-3.5 bg-white  text-black rounded-full  text-lg">
-                Weight loss
-              </li>
-              <li className="w-43 text-center py-3.5 text-white font-light text-lg">
-                Hair Care
-              </li>
-              <li className="w-43 text-center py-3.5 text-white font-light text-lg">
-                Skin Care
-              </li>
-              <li className="w-43 text-center py-3.5 text-white font-light text-lg">
-                Harmone
-              </li>
-              <li className="w-43 text-center py-3.5 text-white font-light text-lg">
-                Wellness
-              </li>
+          <InnerBar className2=" px-2 py-2 max-md:max-w-[350px]">
+            <ul className="flex items-center gap-3 overflow-x-auto scrollbar-none">
+              {[
+                "Weight loss",
+                "Hair Care",
+                "Skin Care",
+                "Hormone",
+                "Wellness",
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className={`
+            whitespace-nowrap text-center 
+            px-6 py-3.5 
+            max-lg:px-3 max-lg:1.5 
+            rounded-full text-lg max-lg:text-base max-sm:text-sm
+            ${i === 0 ? "bg-white text-black" : "text-white font-light"}
+          `}
+                >
+                  {item}
+                </li>
+              ))}
             </ul>
           </InnerBar>
 
           {/* Product */}
 
-          <div className="my-8  gap-x-6  flex w-full">
-            <div className="bg-transparent  w-full max-w-2/5  relative shadow-lg rounded-3xl overflow-hidden">
+          <div className="my-8 flex flex-col lg:flex-row gap-6 w-full">
+            {/* IMG */}
+            <div className="relative w-full lg:w-2/5 aspect-square h-[380px] lg:h-auto rounded-3xl overflow-hidden shadow-lg">
               <Image
                 src="/images/product.png"
                 alt="Product Image"
                 fill
-                className="object-cover rounded-xl"
+                className="object-cover rounded-3xl"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 35vw"
               />
             </div>
 
-            <Card className=" flex-col flex justify-between h-[450px] w-3/3">
+            {/* CARD */}
+            <Card className="flex flex-col justify-between w-full lg:w-3/5 gap-y-6 p-6 h-auto">
+              {/* HEADER */}
               <div className="w-full">
                 <div className="border-b py-6 border-foreground/20">
-                  <p className="text-3xl font-mono font-bold">
+                  <p className="text-3xl font-mono font-bold max-md:text-2xl">
                     {center.subtitle}
                   </p>
-                  <p className="text-base pt-3">{center.description}</p>
+                  <p className="text-base pt-3 leading-relaxed">
+                    {center.description}
+                  </p>
                 </div>
 
+                {/* LIST */}
                 <ul className="flex flex-col gap-y-2 my-6">
-                  {center.benefits &&
-                    center.benefits.map((b, index) => (
-                      <li className="flex items-center gap-x-2.5" key={index}>
-                        <CircleCheck color="#D4B66E" size={26} />
-                        {b}
-                      </li>
-                    ))}
+                  {center.benefits?.map((b, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center gap-x-2.5 text-sm md:text-base"
+                    >
+                      <CircleCheck size={24} className="text-[#D4B66E]" />
+                      {b}
+                    </li>
+                  ))}
                 </ul>
               </div>
 
-              <div className="flex items-center justify-between">
-                <div className="font-mono  text-2xl">
-                  <span
-                    className="
-                        text-[#D4B66E]
-                       font-semibold"
-                  >
-                    ${center.price}{" "}
+              {/* PRICE + BTNS */}
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div className="font-mono text-xl md:text-2xl whitespace-nowrap">
+                  <span className="text-[#D4B66E] font-semibold">
+                    ${center.price}
                   </span>{" "}
                   |{" "}
                   <span className="text-lg line-through">
-                    {" "}
                     ${center.oldPrice}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-x-3">
-                  <Button>Get started</Button>
-
-                  <Button variant="underline">Learn more</Button>
+                <div className="flex gap-3 w-full md:w-auto">
+                  <Button className="w-full md:w-auto">Get started</Button>
+                  <Button variant="underline" className="w-full md:w-auto">
+                    Learn more
+                  </Button>
                 </div>
               </div>
             </Card>
@@ -178,22 +189,48 @@ const SliderProducts = () => {
           <div className="caroussel relative mt-6">
             <div className="absolute inset-y-0 left-0 w-18 bg-linear-to-r  h-[200px] from-[#21251A] from-20% to-transparent z-20"></div>
             <div className="absolute inset-y-0 left-0 w-18 bg-linear-to-r  h-[200px] from-[#21251A] from-20% to-transparent z-20">
-              <div
+              <button
                 onClick={() => setSelectedIndex(mod(selectedIndex - 1))}
-                className="bg-gray-200/20 h-20 cursor-pointer w-20 transform -translate-x-15 translate-y-10  flex items-center justify-center rounded-full border  border-white"
+                className="
+      absolute flex items-center justify-center
+      w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+
+      rounded-full border border-white bg-white/10
+      backdrop-blur-md cursor-pointer
+      transition-all duration-200
+
+      left-2 md:left-4 lg:-left-10
+      top-auto md:top-1/2 md:-translate-y-1/2 bottom-20
+
+      z-20
+    "
               >
-                <ChevronLeft color="white" size={36} />
-              </div>
+                <ChevronLeft size={28} className=" text-white" />
+              </button>
+
+              {/* Right button */}
             </div>
 
             <div className="absolute inset-y-0 right-0 w-18 bg-linear-to-l h-[200px]  from-[#21251A] from-20%  to-transparent z-20"></div>
             <div className="absolute inset-y-0 right-0 w-18 bg-linear-to-l h-[200px]  from-[#21251A] from-20%  to-transparent z-20">
-              <div
+              <button
                 onClick={() => setSelectedIndex(mod(selectedIndex + 1))}
-                className="bg-gray-200/20 cursor-pointer h-20 w-20 flex items-center transform translate-y-10 translate-x-15 justify-center rounded-full border border-white"
+                className="
+      absolute flex items-center justify-center
+      w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+
+      rounded-full border border-white bg-white/10
+      backdrop-blur-md cursor-pointer
+      transition-all duration-200
+
+      right-2 md:right-4 lg:-right-10
+      top-auto md:top-1/2 md:-translate-y-1/2 bottom-20
+
+      z-20
+    "
               >
-                <ChevronRight color="white" size={36} />
-              </div>
+                <ChevronRight size={28} className=" text-white" />
+              </button>
             </div>
 
             <div className="carousel-left">

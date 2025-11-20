@@ -1,6 +1,6 @@
 import Image from "next/image";
-import CtaButton from "../ui/CtaButton";
-import SectionHelper from "../ui/SectionHelper";
+import CtaButton from "../../ui/CtaButton";
+import SectionHelper from "../../ui/SectionHelper";
 import { ChevronUp } from "lucide-react";
 
 const HeroSection = () => {
@@ -33,6 +33,7 @@ const HeroSection = () => {
               height={23}
               src={"/images/icons/users.svg"}
               alt="Users icon"
+              loading="eager"
             />{" "}
             150,000+ people supported
           </li>
@@ -43,6 +44,7 @@ const HeroSection = () => {
               height={23}
               src={"/images/icons/check.svg"}
               alt="Check icon"
+              loading="eager"
             />{" "}
             Trusted clinical care
           </li>
@@ -53,6 +55,7 @@ const HeroSection = () => {
               height={23}
               src={"/images/icons/usd.svg"}
               alt="Dollar icon"
+              loading="eager"
             />{" "}
             Clear, upfront pricing
           </li>

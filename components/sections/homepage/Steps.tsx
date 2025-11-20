@@ -1,7 +1,7 @@
-import HeaderSections from "../ui/HeaderSections";
-import SectionHelper from "../ui/SectionHelper";
+import HeaderSections from "../../ui/HeaderSections";
+import SectionHelper from "../../ui/SectionHelper";
 import Image from "next/image";
-import Card from "../ui/Card";
+import Card from "../../ui/Card";
 
 const Steps = () => {
   const steps = [
@@ -34,26 +34,28 @@ const Steps = () => {
 
       {/* FONDO CENTRADO CORRECTAMENTE */}
       <div className="
-        absolute -bottom-44 left-1/2 -translate-x-1/2
+        absolute -bottom-44 z-20 left-1/2 -translate-x-1/2
         w-full max-w-[1300px]
-        z-10 flex justify-between pointer-events-none
+         flex justify-between pointer-events-none
       ">
         {/* IMG LEFT */}
-        <div className="relative max-lg:hidden h-[600px] w-[400px]">
+        <div className="relative max-lg:hidden max-[1200px]:w-[350px]  h-[600px] w-[400px]">
           <Image
             src="/images/c-2.png"
             alt="Product image"
             fill
+            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 30vw"
             className="object-contain"
           />
         </div>
 
         {/* IMG RIGHT (levemente abajo) */}
-        <div className="relative max-lg:hidden h-[600px] w-[380px] translate-y-10">
+        <div className="relative max-lg:hidden  max-[1200px]:w-[350px] h-[600px] w-[380px] translate-y-10">
           <Image
             src="/images/c-1.png"
             alt="Product image"
             fill
+            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 30vw"
             className="object-contain"
           />
         </div>
@@ -63,14 +65,14 @@ const Steps = () => {
       <div className="relative max-w-[550px] mx-auto h-70 overflow-hidden mt-16">
 
         {/* FADE SUPERIOR */}
-        <div className="absolute bg-linear-to-t w-full top-0 left-0 h-16 z-20 to-background from-transparent" />
+        <div className="absolute bg-linear-to-t w-full top-0 left-0 h-16 z-10 to-background from-0% from-transparent" />
 
         {/* CARDS */}
         <div className="flex flex-col items-center z-0 w-full gap-y-5">
           {steps.map((s) => (
             <Card
               key={s.id}
-              className={`transform -translate-y-20 border-0 shadow-lg p-5!
+              className={`transform -translate-y-23 border-0 shadow-lg p-5!
                 ${s.id !== 2 ? "bg-[#D4B66E]! text-white!" : ""}
               `}
             >
@@ -102,7 +104,7 @@ const Steps = () => {
         </div>
 
         {/* FADE INFERIOR */}
-        <div className="absolute bg-linear-to-b w-full bottom-0 left-0 h-20 z-20 to-background/90 from-transparent" />
+        <div className="absolute bg-linear-to-b w-full bottom-0 left-0 h-20 z-10 to-background from-35% from-transparent" />
       </div>
     </SectionHelper>
   );

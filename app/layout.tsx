@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins, Montserrat } from "next/font/google";
+import { Poppins, Montserrat, Inter } from "next/font/google";
 import "./globals.css";
+
+import Footer from "@/components/organism/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -11,7 +13,13 @@ const poppins = Poppins({
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], 
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,12 +32,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${poppins.variable} antialiased`}
+        suppressHydrationWarning={true}
+        className={`${montserrat.variable} ${inter.variable} ${poppins.variable} antialiased overflow-x-hidden`}
       >
-        {children}
+        <main>{children}</main>
+
+        {/* {Footer} */}
+        <Footer/>
+       
       </body>
     </html>
   );
