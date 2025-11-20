@@ -119,7 +119,7 @@ const LeadProducts = () => {
           onMouseLeave={() => {
             setOnItem(false);
           }}
-          className="max-w-[540] max-lg:max-w-full max-[1290px]:max-w-[500px] transition-all max-lg:h-[600px] h-[600px] w-full"
+          className="max-w-[540] max-lg:max-w-full max-[1290px]:max-w-[500px] transition-all max-lg:h-[600px] max-md:h-[700px] h-[600px] w-full"
         >
           {/* Image preview */}
           {!onItem ? (
