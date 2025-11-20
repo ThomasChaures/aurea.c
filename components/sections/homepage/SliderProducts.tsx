@@ -97,8 +97,9 @@ const SliderProducts = () => {
   return (
     <>
       <SectionHelper className="bg-[#21251A] w-full! max-w-full">
+        <h2 className="sr-only">Products</h2>
         <div className="max-w-7xl flex items-center flex-col mx-auto py-20">
-          <InnerBar className2=" px-2 py-2 max-md:max-w-[350px]">
+          <InnerBar className2=" px-2 py-2 max-sm:max-w-[300px] max-md:max-w-[350px]">
             <ul className="flex items-center gap-3 overflow-x-auto scrollbar-none">
               {[
                 "Weight loss",

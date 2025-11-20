@@ -116,7 +116,7 @@ body {
 
 .carousel-left,
 .carousel-right {
-  flex: 1; /* se estira */
+  flex: 1; 
   display: flex;
   align-items: center;
   padding: 12px;
@@ -179,3 +179,19 @@ body {
 }
 
 
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}

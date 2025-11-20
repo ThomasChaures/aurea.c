@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -53,7 +53,8 @@ const Faqs = () => {
   ];
 
   return (
-    <SectionHelper className="flex max-lg:flex-col max-lg:items-center max-lg:justify-center justify-between items-start gap-x-10">
+    <SectionHelper className="flex max-lg:flex-col max-lg:pt-0! max-lg:items-center max-lg:justify-center justify-between items-start gap-x-10">
+      <h2 className="sr-only">Frequently Asked Questions</h2>
       {/* Imagen */}
       <div className="relative max-lg:hidden w-[624px] h-[624px]">
         <Image

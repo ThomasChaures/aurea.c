@@ -83,12 +83,13 @@ const Footer = () => {
         >
           {brand &&
             brand.map((b, index) => (
-              <div key={index} className="relative    w-[91.33px] min-h-30">
+              <div key={index} className="relative  max-md:w-[60px]   w-[91.33px] min-h-30">
                 <div className="absolute inset-0 bg-[#21251A] mix-blend-overlay rounded-3xl -z-10" />
                 <Image
                   src={`/images/brands/${b}`}
                   alt="Brand"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 35vw"
                   className="object-contain  mix-blend-luminosity
           invert-[0.05] brightness-[1.3]"
                 />

@@ -16,9 +16,9 @@ const WhyUs = () => {
   return (
     <>
       {" "}
-      <SectionHelper className="relative mt-80 mb-20 ">
-        <h2 className="sr-only">Why us?</h2>
-        <div className=" max-w-[900px] flex items-center justify-center max-lg:max-w-[700px] max-lg:-top-80 w-full aspect-square mx-auto absolute -top-104 left-1/2  transform -translate-x-1/2 ">
+      <SectionHelper className="relative mt-80 max-md:mt-50 mb-20 ">
+        <h2 className="sr-only">About us</h2>
+        <div className=" max-w-[900px] flex items-center justify-center max-lg:max-w-[700px] max-sm:-top-50 max-md:-top-70 max-lg:-top-80 w-full aspect-square mx-auto absolute -top-104 left-1/2  transform -translate-x-1/2 ">
           <Image
             className="object-contain"
             src={"/images/cosmetics.png"}
@@ -27,7 +27,7 @@ const WhyUs = () => {
           />
         </div>
 
-        <div className="bg-[#21251A] mx-auto w-full items-center flex flex-col justify-between max-lg:h-auto  h-[484px] p-10 rounded-[64px] shadow-[0px_-4px_10.2px_0px_#00000040] gap-y-0 relative overflow-hidden z-10">
+        <div className="bg-[#21251A] mx-auto w-full items-center flex flex-col justify-between max-lg:h-auto  h-[484px] max-md:p-5 max-md:py-8 max-md:rounded-3xl p-10 rounded-[64px] shadow-[0px_-4px_10.2px_0px_#00000040] gap-y-0 relative overflow-hidden z-10">
           <InnerBar
             inner
             className="max-w-[1032px] z-2 max-lg:max-w-[700px] w-full  h-[52px]"

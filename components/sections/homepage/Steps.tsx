@@ -1,7 +1,10 @@
-import HeaderSections from "../../ui/HeaderSections";
-import SectionHelper from "../../ui/SectionHelper";
+
 import Image from "next/image";
-import Card from "../../ui/Card";
+
+
+import HeaderSections from "@/components/ui/HeaderSections";
+import SectionHelper from "@/components/ui/SectionHelper";
+import Card from "@/components/ui/Card";
 
 const Steps = () => {
   const steps = [
@@ -26,7 +29,7 @@ const Steps = () => {
   ];
 
   return (
-    <SectionHelper className="pb-0! mb-0! relative min-h-[600px] px-0 overflow-hidden max-w-[1300px] mx-auto">
+    <SectionHelper className="pb-0! mb-0! max-lg:mb-20! relative min-h-[600px] px-0 overflow-hidden max-w-[1300px] mx-auto">
       <HeaderSections
         title="Feeling better has never been this easy."
         text="Our care uses GLP-1 to support metabolic health and sustainable weight management through clinician-designed formulas targeting appetite, metabolism, and glucose control."

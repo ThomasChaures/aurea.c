@@ -196,7 +196,7 @@ const LeadProducts = () => {
               }`}
             >
               <span className="font-light">{t.title}</span>
-              <p className="font-mono font-bold text-2xl">{t.subtitle}</p>
+              <p className="font-mono font-bold max-md:text-xl text-2xl">{t.subtitle}</p>
 
               <div className="font-mono text-2xl">
                 <span

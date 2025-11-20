@@ -67,7 +67,7 @@ const Reviews = () => {
   );
 
   return (
-    <SectionHelper className="my-20">
+    <SectionHelper className="my-20 max-lg:mb-0!">
       <HeaderSections
         title="What others say about us"
         text="Our treatments support metabolic health and sustainable weight management through clinician-designed formulas tailored for appetite, metabolism, and glucose control."

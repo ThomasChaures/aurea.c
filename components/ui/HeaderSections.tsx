@@ -13,7 +13,7 @@ const HeaderSections = ({
 }) => {
   return (
     <header className={`${className} text-center flex mb-20 flex-col gap-y-4 items-center justify-center`}>
-      <h2 className="font-mono font-bold text-4xl">{title}</h2>
+      <h2 className="font-mono font-bold text-4xl max-lg:text-2xl">{title}</h2>
       <p className="font-light max-w-[800px]">{text}</p>
     </header>
   );
