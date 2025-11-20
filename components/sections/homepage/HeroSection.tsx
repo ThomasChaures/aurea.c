@@ -4,6 +4,7 @@ import CtaButton from "../../ui/CtaButton";
 import SectionHelper from "../../ui/SectionHelper";
 import { ChevronUp } from "lucide-react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 const HeroSection = () => {
@@ -45,12 +46,12 @@ const HeroSection = () => {
             } absolute h-90 z-40 transition-all lg:hidden rounded-b-3xl backdrop-blur-xl py-4.5 px-2 w-full border-2 border-white/20  shadow-lg left-1/2 transform -translate-x-1/2`}
           >
             <ul className="flex flex-col mt-30 items-center gap-x-8 z-0 text-white justify-between text-sm font-light font-sans">
-              <li className="py-4 px-4 border-b w-full ">Home</li>
-              <li className="py-4 px-4 border-b w-full ">About Us</li>
-              <li className="py-4 px-4 border-b w-full flex items-center gap-x-1">
-                Products <ChevronUp size={18} color="white" />{" "}
+              <li className="py-4 px-4 border-b w-full "><Link className="w-full block" href={'/'}>Home</Link></li>
+              <li className="py-4 px-4 border-b w-full "><Link className="w-full block" href={'/'}>About Us</Link></li>
+              <li className="py-4 px-4 border-b w-full">
+                <Link  className="flex items-center gap-x-1 w-full" href={"/"}>Products <ChevronUp size={18} color="white" /></Link>
               </li>
-              <li className="py-4 px-4  w-full ">Contact Us</li>
+              <li className="py-4 px-4  w-full "><Link className="w-full block" href={"/"}>Contact Us</Link></li>
             </ul>
           </nav>
         </header>
