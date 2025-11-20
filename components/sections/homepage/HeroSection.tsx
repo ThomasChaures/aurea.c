@@ -17,7 +17,7 @@ const HeroSection = () => {
       />
 
       {/* NAV */}
-      <header className="w-full flex absolute z-50 top-10 px-10 max-md:p-5 justify-between max-w-[1192px] mx-auto">
+      <header className="w-full flex absolute z-50 top-10 max-md:top-5 px-10 max-md:p-5 justify-between max-w-[1192px] mx-auto">
         <div className="bg-background z-42 px-5 py-2 rounded-full shadow-lg">
           <p className="font-mono font-bold text-2xl">Aurea.C</p>
         </div>
