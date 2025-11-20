@@ -193,3 +193,32 @@ body {
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
 }
+
+@supports (animation-timeline: scroll()) {
+  /* Timeline del scroll usando la sección */
+  #stepsSection {
+    scroll-timeline-name: stepsScroll;
+    scroll-timeline-axis: vertical;
+  }
+
+  .steps-animated {
+    animation: moveSteps 1s linear both;
+    animation-timeline: stepsScroll;
+  }
+
+  /* 3 posiciones: Step1 → Step2 → Step3 */
+  @keyframes moveSteps {
+    0% {
+      transform: translateY(0);
+    }
+    33% {
+      transform: translateY(-180px);
+    }
+    66% {
+      transform: translateY(-360px);
+    }
+    100% {
+      transform: translateY(-360px);
+    }
+  }
+}
