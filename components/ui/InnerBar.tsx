@@ -40,6 +40,7 @@ const InnerBar = ({
       before:h-full before:w-12
       before:bg-[radial-gradient(circle_at_left,rgba(0,0,0,0.9),black)]
       before:blur-[10px]
+      before:z-2
 
       after:content-['']
       after:absolute after:-right-4 after:top-0
