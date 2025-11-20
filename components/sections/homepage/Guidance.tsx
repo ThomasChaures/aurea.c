@@ -98,7 +98,10 @@ const Guidance = () => {
                       {b.title}
                     </h3>
 
-                    <Button className="flex items-center justify-between w-full">
+                    <Button
+                      aria-label={`Learn more about ${b.category}`}
+                      className="flex items-center justify-between w-full"
+                    >
                       <span>{b.category}</span>
                       <ChevronRight color="white" />
                     </Button>
@@ -111,8 +114,11 @@ const Guidance = () => {
         <div className="mt-10">
           <CtaButton route={"/"} name="See if you're eligiable" />
         </div>
-        <div className="w-[600px] max-md:w-[200px]
-  h-[600px] rounded-full blur-[400px] left-1/2 transform -translate-x-1/2 top-0 absolute bg-white/80"></div>
+        <div
+          aria-hidden="true"
+          className="w-[600px] max-md:w-[200px]
+  h-[600px] rounded-full blur-[400px] left-1/2 transform -translate-x-1/2 top-0 absolute bg-white/80"
+        ></div>
       </div>
     </SectionHelper>
   );

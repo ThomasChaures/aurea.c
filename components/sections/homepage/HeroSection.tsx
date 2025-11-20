@@ -16,11 +16,16 @@ const HeroSection = () => {
   h-[616px] flex-col flex items-center justify-center bg-no-repeat'
       >
         <div
+          aria-hidden="true"
           className="w-160 h-160 rounded-full max-md:w-[280px]  max-md:blur-[190px]
  blur-[250px] left-1/2 transform -translate-x-1/2 -top-50 max-md:-top-20 absolute bg-radial from-white via-white/30 to-transparent"
         ></div>
 
-        <header className={`w-full flex ${!open ? "absolute" : "fixed"} z-50 top-10 max-w-[1192px] mx-auto px-10 max-md:p-5 items-center justify-between`}>
+        <header
+          className={`w-full flex ${
+            !open ? "absolute" : "fixed"
+          } z-50 top-10 max-w-[1192px] mx-auto px-10 max-md:p-5 items-center justify-between`}
+        >
           <div className="bg-background z-42 px-5 py-2 rounded-full shadow-lg">
             <p className="font-mono font-bold text-2xl  ">Aurea.C</p>
           </div>

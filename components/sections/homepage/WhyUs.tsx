@@ -24,6 +24,8 @@ const WhyUs = () => {
             src={"/images/cosmetics.png"}
             fill
             alt="Cosmetics"
+            aria-hidden="true"
+            role="presentation"
           />
         </div>
 
@@ -74,6 +76,7 @@ const WhyUs = () => {
             </ul>
           </div>
           <div
+            aria-hidden="true"
             className="w-[400px] h-[400px] max-md:w-[250px] max-md:h-[250px]
  rounded-full  blur-[270px] left-1/2 transform -translate-x-1/2 top-30 absolute bg-white/70"
           ></div>

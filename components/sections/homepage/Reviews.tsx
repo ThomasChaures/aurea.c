@@ -81,7 +81,10 @@ const Reviews = () => {
               className=" w-full h-full flex flex-col border-yellow-500/30 justify-between text-center"
             >
               <div>
-                <div className="flex items-center justify-center gap-1 mb-4">
+                <div
+                  aria-label={`${r.rating} out of 5 stars`}
+                  className="flex items-center justify-center gap-1 mb-4"
+                >
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
