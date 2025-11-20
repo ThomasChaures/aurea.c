@@ -1,4 +1,4 @@
-import React from "react";
+
 import SectionHelper from "../../ui/SectionHelper";
 import HeaderSections from "../../ui/HeaderSections";
 import Image from "next/image";
