@@ -16,35 +16,38 @@ const WhyUs = () => {
   return (
     <>
       {" "}
-      <SectionHelper className="relative mt-80 mb-20 max-lg:">
+      <SectionHelper className="relative mt-80 mb-20 ">
         <h2 className="sr-only">Why us?</h2>
         <div className=" max-w-[900px] flex items-center justify-center max-lg:max-w-[700px] max-lg:-top-80 w-full aspect-square mx-auto absolute -top-104 left-1/2  transform -translate-x-1/2 ">
           <Image
-          className="object-contain"
-          src={"/images/cosmetics.png"}
-          fill
-          alt="Cosmetics"
-        />
+            className="object-contain"
+            src={"/images/cosmetics.png"}
+            fill
+            alt="Cosmetics"
+          />
         </div>
 
         <div className="bg-[#21251A] mx-auto w-full items-center flex flex-col justify-between max-lg:h-auto  h-[484px] p-10 rounded-[64px] shadow-[0px_-4px_10.2px_0px_#00000040] gap-y-0 relative overflow-hidden z-10">
-           <InnerBar inner className="max-w-[1032px] z-2 max-lg:max-w-[700px] w-full  h-[52px]">
+          <InnerBar
+            inner
+            className="max-w-[1032px] z-2 max-lg:max-w-[700px] w-full  h-[52px]"
+          >
             <div className="animate-marquee whitespace-nowrap max-lg:text-sm font-sans font-light inline-block">
-                {/* Items originales */}
-                {items.map((item, i) => (
-                  <span key={i} className="mx-8 text-white">
-                    {item}
-                  </span>
-                ))}
+              {/* Items originales */}
+              {items.map((item, i) => (
+                <span key={i} className="mx-8 text-white">
+                  {item}
+                </span>
+              ))}
 
-                {/* Clonados para animación infinita */}
-                {items.map((item, i) => (
-                  <span key={`clone-${i}`} className="mx-8 text-white">
-                    {item}
-                  </span>
-                ))}
+              {/* Clonados para animación infinita */}
+              {items.map((item, i) => (
+                <span key={`clone-${i}`} className="mx-8 text-white">
+                  {item}
+                </span>
+              ))}
             </div>
-           </InnerBar>
+          </InnerBar>
 
           <p className="font-sans text-[25px] z-2 max-lg:mt-7 max-lg:text-xl font-light leading-9  text-white text-center">
             “Aurea.Cure gave me clarity I never found in clinics, supplements,
@@ -70,7 +73,10 @@ const WhyUs = () => {
               </li>
             </ul>
           </div>
-          <div className="w-[400px] h-[400px] rounded-full  blur-[270px] left-1/2 transform -translate-x-1/2 top-30 absolute bg-white/70"></div>
+          <div
+            className="w-[400px] h-[400px] max-md:w-[250px] max-md:h-[250px]
+ rounded-full  blur-[270px] left-1/2 transform -translate-x-1/2 top-30 absolute bg-white/70"
+          ></div>
         </div>
       </SectionHelper>
     </>

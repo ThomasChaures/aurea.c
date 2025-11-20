@@ -111,7 +111,8 @@ const Guidance = () => {
         <div className="mt-10">
           <CtaButton route={"/"} name="See if you're eligiable" />
         </div>
-        <div className="w-[600px] h-[600px] rounded-full blur-[400px] left-1/2 transform -translate-x-1/2 top-0 absolute bg-white/80"></div>
+        <div className="w-[600px] max-md:w-[200px]
+  h-[600px] rounded-full blur-[400px] left-1/2 transform -translate-x-1/2 top-0 absolute bg-white/80"></div>
       </div>
     </SectionHelper>
   );

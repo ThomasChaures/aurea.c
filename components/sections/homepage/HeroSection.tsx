@@ -10,7 +10,8 @@ const HeroSection = () => {
         className='bg-[url("/images/Hero.png")] bg-position-[center_top]
   h-[616px] flex-col flex items-center justify-center bg-no-repeat'
       >
-        <div className="w-160 h-160 rounded-full blur-[250px] left-1/2 transform -translate-x-1/2 -top-50 absolute bg-radial from-white via-white/30 to-transparent"></div>
+        <div className="w-160 h-160 rounded-full max-md:w-[250px] max-md:h-[250px]
+ blur-[250px] left-1/2 transform -translate-x-1/2 -top-50 absolute bg-radial from-white via-white/30 to-transparent"></div>
 
         <header className="w-full flex absolute top-10 max-w-[1192px] mx-auto px-10 items-center justify-between">
           <div className="bg-background px-5 py-2 rounded-full shadow-lg">
@@ -61,7 +62,7 @@ const HeroSection = () => {
           </li>
         </ul>
 
-        <nav className="bg-black/38 backdrop-blur-xl py-4.5 px-2   rounded-full border-2 border-white/20 absolute -bottom-4.5 shadow-lg left-1/2 transform -translate-x-1/2">
+        <nav className="bg-black/38 backdrop-blur-xl py-4.5 px-2 rounded-full border-2 border-white/20 absolute -bottom-4.5 shadow-lg left-1/2 transform -translate-x-1/2">
           <ul className="flex items-center gap-x-8 z-0 text-white justify-between text-sm font-light font-sans">
             <li className="pl-6">Home</li>
             <li>About Us</li>
