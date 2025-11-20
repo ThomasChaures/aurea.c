@@ -94,9 +94,9 @@ const Guidance = () => {
 
                   {/* Contenido */}
                   <div className="p-3 flex flex-col h-[50%] justify-between">
-                    <p className="text-base text-left leading-snug text-white">
+                    <h3 className="text-base text-left leading-snug text-white">
                       {b.title}
-                    </p>
+                    </h3>
 
                     <Button className="flex items-center justify-between w-full">
                       <span>{b.category}</span>

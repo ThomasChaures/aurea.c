@@ -102,7 +102,7 @@ const Footer = () => {
             <p>© 2025 Aureacure, All rights reserved</p>
           </div>
 
-          <ul className="flex max-lg:flex-col w-full justify-end items-center max-lg:gap-x-3 max-xl:gap-x-4 gap-x-6">
+          <ul className="flex max-lg:flex-col w-full justify-end items-center max-lg:gap-x-3 max-xl:gap-x-4 gap-6">
             <li>
               <Link href={"/"}>Terms & conditions</Link>
             </li>

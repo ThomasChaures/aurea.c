@@ -96,7 +96,10 @@ const SliderProducts = () => {
 
   return (
     <>
-      <SectionHelper className="bg-[#21251A] w-full! max-w-full">
+      <SectionHelper
+        aria="product-title"
+        className="bg-[#21251A] w-full! max-w-full"
+      >
         <h2 className="sr-only">Products</h2>
         <div className="max-w-7xl flex items-center flex-col mx-auto py-20">
           <InnerBar className2=" px-2 py-2 max-sm:max-w-[300px] max-md:max-w-[350px]">
@@ -126,7 +129,7 @@ const SliderProducts = () => {
 
           {/* Product */}
 
-          <div className="my-8 flex flex-col lg:flex-row gap-6 w-full">
+          <article className="my-8 flex flex-col lg:flex-row gap-6 w-full">
             {/* IMG */}
             <div className="relative w-full lg:w-2/5 aspect-square h-[380px] lg:h-auto rounded-3xl overflow-hidden shadow-lg">
               <Image
@@ -143,9 +146,12 @@ const SliderProducts = () => {
               {/* HEADER */}
               <div className="w-full">
                 <div className="border-b py-6 border-foreground/20">
-                  <p className="text-3xl font-mono font-bold max-md:text-2xl">
+                  <h3
+                    id="product-title"
+                    className="text-3xl font-mono font-bold max-md:text-2xl"
+                  >
                     {center.subtitle}
-                  </p>
+                  </h3>
                   <p className="text-base pt-3 leading-relaxed">
                     {center.description}
                   </p>
@@ -168,11 +174,11 @@ const SliderProducts = () => {
               {/* PRICE + BTNS */}
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="font-mono text-xl md:text-2xl whitespace-nowrap">
-                  <span className="text-[#D4B66E] font-semibold">
+                  <span aria-label="Current price" className="text-[#D4B66E] font-semibold">
                     ${center.price}
                   </span>{" "}
                   |{" "}
-                  <span className="text-lg line-through">
+                  <span aria-label="Original price" className="text-lg line-through">
                     ${center.oldPrice}
                   </span>
                 </div>
@@ -185,12 +191,13 @@ const SliderProducts = () => {
                 </div>
               </div>
             </Card>
-          </div>
+          </article>
 
           <div className="caroussel relative mt-6">
             <div className="absolute inset-y-0 left-0 w-18 bg-linear-to-r  h-[200px] from-[#21251A] from-20% to-transparent z-20"></div>
             <div className="absolute inset-y-0 left-0 w-18 bg-linear-to-r  h-[200px] from-[#21251A] from-20% to-transparent z-20">
               <button
+                aria-label="Previous treatment"
                 onClick={() => setSelectedIndex(mod(selectedIndex - 1))}
                 className="
       absolute flex items-center justify-center
@@ -215,6 +222,7 @@ const SliderProducts = () => {
             <div className="absolute inset-y-0 right-0 w-18 bg-linear-to-l h-[200px]  from-[#21251A] from-20%  to-transparent z-20"></div>
             <div className="absolute inset-y-0 right-0 w-18 bg-linear-to-l h-[200px]  from-[#21251A] from-20%  to-transparent z-20">
               <button
+                aria-label="Next treatment"
                 onClick={() => setSelectedIndex(mod(selectedIndex + 1))}
                 className="
       absolute flex items-center justify-center

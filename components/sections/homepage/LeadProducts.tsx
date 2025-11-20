@@ -112,7 +112,7 @@ const LeadProducts = () => {
       />
 
       <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-10 items-center max-[770px]:justify-items-normal justify-items-center">
-        <div
+        <article
           onMouseEnter={() => {
             setOnItem(true);
           }}
@@ -134,7 +134,10 @@ const LeadProducts = () => {
                   className="rounded-xl object-cover"
                 />
 
-                <Button className="absolute bottom-7 right-7 text-sm">
+                <Button
+                  aria-label={`See full details of ${itemSelected.subtitle}`}
+                  className="absolute bottom-7 right-7 text-sm"
+                >
                   See full details
                 </Button>
               </div>
@@ -145,9 +148,9 @@ const LeadProducts = () => {
               <Card className="h-full max-w-[540px] max-lg:max-w-full flex flex-col items-start justify-between   w-full">
                 <Pill>{itemSelected.title}</Pill>
                 <div className="border-b py-6 border-foreground/20">
-                  <p className="text-4xl max-lg:text-2xl font-mono font-bold">
+                  <h3 className="text-4xl max-lg:text-2xl font-mono font-bold">
                     {itemSelected.subtitle}
-                  </p>
+                  </h3>
                   <p className="text-lg pt-3">{itemSelected.description}</p>
                 </div>
 
@@ -186,7 +189,7 @@ const LeadProducts = () => {
               </Card>
             </>
           )}
-        </div>
+        </article>
         <div className="grid grid-cols-1 md:grid-cols-2  gap-4 max-lg:max-w-full max-w-[540px]">
           {treatments.map((t) => (
             <Card
@@ -196,17 +199,26 @@ const LeadProducts = () => {
               }`}
             >
               <span className="font-light">{t.title}</span>
-              <p className="font-mono font-bold max-md:text-xl text-2xl">{t.subtitle}</p>
+              <h3 className="font-mono font-bold max-md:text-xl text-2xl">
+                {t.subtitle}
+              </h3>
 
               <div className="font-mono text-2xl">
                 <span
+                  aria-label="Current price"
                   className={`${
                     t.id === 1 ? "text-[#D4B66E]" : ""
                   } font-semibold`}
                 >
                   ${t.price}
                 </span>{" "}
-                | <span className="text-lg line-through">${t.oldPrice}</span>
+                |{" "}
+                <span
+                  aria-label="Original price"
+                  className="text-lg line-through"
+                >
+                  ${t.oldPrice}
+                </span>
               </div>
             </Card>
           ))}
