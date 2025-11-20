@@ -132,8 +132,6 @@ body {
 .carousel-right > div {
   display: flex;
   gap: 12px;
-
-  /* 👇 ESTA ES LA MAGIA */
   min-width: max-content;
   height: 145px;
 }
@@ -148,8 +146,8 @@ body {
 .carousel-left > div > div,
 .carousel-right > div > div {
   flex: 1 1 0px;
-  min-width: 260px; /* tamaño de card */
-  max-width: 260px; /* límite para que no explote en pantallas grandes */
+  min-width: 260px; 
+  max-width: 260px; 
   padding: 24px;
   display: flex;
   flex-direction: column;
