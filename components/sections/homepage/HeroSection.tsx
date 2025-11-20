@@ -24,7 +24,7 @@ const HeroSection = () => {
         <header
           className={`w-full flex ${
             !open ? "absolute" : "fixed"
-          } z-50 top-10 max-w-[1192px] mx-auto px-10 max-md:p-5 items-center justify-between`}
+          } z-50 top-10 max-sm:top-5 max-w-[1192px] mx-auto px-10 max-md:p-5 items-center justify-between`}
         >
           <div className="bg-background z-42 px-5 py-2 rounded-full shadow-lg">
             <p className="font-mono font-bold text-2xl  ">Aurea.C</p>
