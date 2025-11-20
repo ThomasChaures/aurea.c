@@ -75,7 +75,7 @@ const Steps = () => {
           {steps.map((s) => (
             <Card
               key={s.id}
-              className={`transform -translate-y-23 border-0 shadow-lg p-5!
+              className={`transform -translate-y-23 max-[400px]:-translate-y-38 border-0 shadow-lg p-5!
                 ${s.id !== 2 ? "bg-[#D4B66E]! text-white!" : ""}
               `}
             >
